@@ -121,7 +121,7 @@ Pressure = [Pvm, PTresca, P_ASME_B31G, P_DnV, P_PCORRC]
 index = ["Pvm (MPa)", "PTresca (MPa)", "P_ASME_B31G (MPa)", "P_DnV (MPa)", "P_PCORRC (MPa)"]
 df = pd.DataFrame({"Burst Pressure (MPa)": Pressure}, index=index)
 
-st.pyplot(df.plot.barh(stacked=True).figure)
+#st.pyplot(df.plot.barh(stacked=True).figure)
 
 # Principle stresses for Maximum Operating Pressure
 P1max = Pop_Max*D/(2*t)
