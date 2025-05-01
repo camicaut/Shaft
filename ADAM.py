@@ -21,9 +21,9 @@ def user_input_features():
     motor_power = st.sidebar.number_input('Motor Power, P (Watt)', value = 0.01)
     rotation = st.sidebar.number_input('No. of rotation per second, f (rps)', value = 0.01)
     shaft_diameter = st.sidebar.number_input('Shaft diameter, D (mm)', value = 0.01)
-    corrosion_length = st.sidebar.number_input('Corrosion Length, Lc (mm)', value = 0.01)
-    corrosion_depth = st.sidebar.number_input('Corrosion Depth, Dc (mm)', value = 0.01)
-    Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
+    Vickers_hardness = st.sidebar.number_input('Vickers hardness, HV (kgf/mm^2)', value = 0.01)
+    notchroot_radius = st.sidebar.number_input('Notch root radius, r (mm)', value = 0.01)
+    characteristic_length = st.sidebar.number_input('Characteristic length, p (mm)', value = 0.01)
     UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
     Maximum_Operating_Pressure = st.sidebar.slider('Maximum Operating Pressure, Pop, Max (MPa)', min_value=0, max_value=50, step=1)
     Minimum_Operating_Pressure = st.sidebar.slider('Minimum Operating Pressure, Pop, Min (MPa)', min_value=0, max_value=50, step=1)
@@ -31,9 +31,9 @@ def user_input_features():
     data = {'P (Watt)': motor_power,
             'f (rps)': rotation,
             'D (mm)': shaft_diameter,
-            'Lc (mm)': corrosion_length,
-            'Dc (mm)': corrosion_depth,           
-            'UTS (MPa)': UTS,
+            'HV (kgf/mm^2)': Vickers_hardness,
+            'r (mm)': notchroot_radius,           
+            'p (mm)': characteristic_length,
             'Sy (MPa)': Sy,
             'Pop_Max (MPa)': Maximum_Operating_Pressure,
             'Pop_Min (MPa)': Minimum_Operating_Pressure}
@@ -45,9 +45,9 @@ df = user_input_features()
 P=df['P (Watt)'].values.item()
 f=df['f (rps)'].values.item()
 D=df['D (mm)'].values.item()
-Lc=df['Lc (mm)'].values.item()
-Dc=df['Dc (mm)'].values.item()
-UTS=df['UTS (MPa)'].values.item()
+HV=df['HV (kgf/mm^2)'].values.item()
+r=df['r (mm)'].values.item()
+p=df['p (mm)'].values.item()
 Sy=df['Sy (MPa)'].values.item()
 Pop_Max=df['Pop_Max (MPa)'].values.item()
 Pop_Min=df['Pop_Min (MPa)'].values.item()
