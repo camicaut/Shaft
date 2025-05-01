@@ -20,7 +20,7 @@ st.sidebar.header('User Input Parameters')
 def user_input_features():
     motor_power = st.sidebar.number_input('Motor Power, P (Watt)', value = 0.01)
     rotation = st.sidebar.number_input('No. of rotation per second, f (rps)', value = 0.01)
-    pipe_length = st.sidebar.number_input('Pipe Length, L (mm)', value = 0.01)
+    shaft_diameter = st.sidebar.number_input('Shaft diameter, D (mm)', value = 0.01)
     corrosion_length = st.sidebar.number_input('Corrosion Length, Lc (mm)', value = 0.01)
     corrosion_depth = st.sidebar.number_input('Corrosion Depth, Dc (mm)', value = 0.01)
     Sy = st.sidebar.number_input('Yield Stress, Sy (MPa)', value = 0.01)
@@ -30,7 +30,7 @@ def user_input_features():
 
     data = {'P (Watt)': motor_power,
             'f (rps)': rotation,
-            'L (mm)': pipe_length,
+            'D (mm)': shaft_diameter,
             'Lc (mm)': corrosion_length,
             'Dc (mm)': corrosion_depth,           
             'UTS (MPa)': UTS,
@@ -44,7 +44,7 @@ df = user_input_features()
 
 P=df['P (Watt)'].values.item()
 f=df['f (rps)'].values.item()
-L=df['L (mm)'].values.item()
+D=df['D (mm)'].values.item()
 Lc=df['Lc (mm)'].values.item()
 Dc=df['Dc (mm)'].values.item()
 UTS=df['UTS (MPa)'].values.item()
