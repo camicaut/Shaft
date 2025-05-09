@@ -56,10 +56,10 @@ def user_input_features():
 
 df = user_input_features()
 
-P=df['P (Watt)'].values.item()
+p=df['P (Watt)'].values.item()
 f=df['f (rps)'].values.item()
-D=df['D (mm)'].values.item()
-HV=df['HV (kgf/mm^2)'].values.item()
+d=df['D (mm)'].values.item()
+hv=df['HV (kgf/mm^2)'].values.item()
 cl=df['C load'].values.item()
 csi=df['C size'].values.item()
 csu=df['C surf'].values.item()
@@ -99,14 +99,14 @@ P_PCORRC = (2*t*UTS/D)*(1-Dc/t)
 user_input={'P (Watt)': "{:.2f}".format(P),
             'f (rps)': "{:.2f}".format(f),
             'D (mm)': "{:.2f}".format(D),
-            'HV (kgf/mm^2)': "{:.2f}".format(HV),
+            'HV (kgf/mm^2)': "{:.2f}".format(hv),
             'C load': "{:.2f}".format(cl),
             'C size': "{:.2f}".format(csi),
             'C surf': "{:.2f}".format(csu),
             'C temp': "{:.2f}".format(ct),
             'C reliab': "{:.2f}".format(cr),
             'C notch': "{:.2f}".format(cn),
-            'Kt': "{:.2f}".format(Kt),
+            'Kt': "{:.2f}".format(kt),
             'r (mm)': "{:.2f}".format(r),
             'p (mm)' : "{:.2f}".format(p)}
 user_input_df=pd.DataFrame(user_input, index=[0])
