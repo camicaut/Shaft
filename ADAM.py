@@ -34,9 +34,9 @@ def user_input_features():
             'HV (kgf/mm^2)': Vickers_hardness,
             'r (mm)': notchroot_radius,           
             'p (mm)': characteristic_length,
-            'Sy (MPa)': Sy,
-            'Pop_Max (MPa)': Maximum_Operating_Pressure,
-            'Pop_Min (MPa)': Minimum_Operating_Pressure}
+            #'Sy (MPa)': Sy,
+            #'Pop_Max (MPa)': Maximum_Operating_Pressure,
+            #'Pop_Min (MPa)': Minimum_Operating_Pressure}
     features = pd.DataFrame(data, index=[0])
     return features
 
