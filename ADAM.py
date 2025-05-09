@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 from pickle import load
@@ -22,17 +23,29 @@ def user_input_features():
     rotation = st.sidebar.number_input('No. of rotation per second, f (rps)', value = 0.01)
     shaft_diameter = st.sidebar.number_input('Shaft diameter, D (mm)', value = 0.01)
     Vickers_hardness = st.sidebar.number_input('Vickers hardness, HV (kgf/mm^2)', value = 0.01)
+    cf_load = st.sidebar.number_input('Load correction factor, C load ', value = 0.01)
+    cf_size = st.sidebar.number_input('Size correction factor, C size ', value = 0.01)
+    cf_surf = st.sidebar.number_input('Surface finishing correction factor, C surf ', value = 0.01)
+    cf_temp = st.sidebar.number_input('Temperature correction factor, C temp ', value = 0.01)
+    cf_reliab = st.sidebar.number_input('Reliable correction factor, C reliab ', value = 0.01)
+    cf_notch = st.sidebar.number_input('Notch correction factor, C notch ', value = 0.01)
+    Stress_conc = st.sidebar.number_input('Stress-Concentration Factor, Kf ', value = 0.01)
+    
     notchroot_radius = st.sidebar.number_input('Notch root radius, r (mm)', value = 0.01)
     characteristic_length = st.sidebar.number_input('Characteristic length, p (mm)', value = 0.01)
-    UTS = st.sidebar.number_input('Ultimate Tensile Strength, UTS (MPa)', value = 0.01)
-    Maximum_Operating_Pressure = st.sidebar.slider('Maximum Operating Pressure, Pop, Max (MPa)', min_value=0, max_value=50, step=1)
-    Minimum_Operating_Pressure = st.sidebar.slider('Minimum Operating Pressure, Pop, Min (MPa)', min_value=0, max_value=50, step=1)
 
     data = {'P (Watt)': motor_power,
             'f (rps)': rotation,
             'D (mm)': shaft_diameter,
             'HV (kgf/mm^2)': Vickers_hardness,
-            'r (mm)': notchroot_radius,           
+            'C load' : cf_load,
+            'C size' :  cf_size,
+            'C surf' : cf_surf,
+            'C temp' : cf_temp,
+            'C reliab' : cf_reliab,
+            'C notch' :cf_notch,
+            'Kt' : Stress_conc,
+            'r (mm)': notchroot_radius,  
             'p (mm)': characteristic_length,
             #'Sy (MPa)': Sy,
             #'Pop_Max (MPa)': Maximum_Operating_Pressure,
@@ -47,11 +60,16 @@ P=df['P (Watt)'].values.item()
 f=df['f (rps)'].values.item()
 D=df['D (mm)'].values.item()
 HV=df['HV (kgf/mm^2)'].values.item()
+cl=df['C load'].values.item()
+csi=df['C size'].values.item()
+csu=df['C surf'].values.item()
+ct=df['C temp'].values.item()
+cr=df['C reliab'].values.item()
+cn=df['C notch'].values.item()
+Kt=df['Kt'].values.item()
 r=df['r (mm)'].values.item()
 p=df['p (mm)'].values.item()
-Sy=df['Sy (MPa)'].values.item()
-Pop_Max=df['Pop_Max (MPa)'].values.item()
-Pop_Min=df['Pop_Min (MPa)'].values.item()
+
 
 st.subheader('Nomenclature')
 st.write('t is the pipe thickness; D is the pipe diameter; L is the pipe length (i.e., by default = 1000 mm); Lc is the corrosion length; Dc is the corrosion depth; Sy is the pipe material yield stress; UTS is the pipe material Ultimate Tensile Strength.')
