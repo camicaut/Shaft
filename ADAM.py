@@ -22,14 +22,14 @@ def user_input_features():
     motor_power = st.sidebar.number_input('Motor Power, P (Watt)', value = 0.01)
     rotation = st.sidebar.number_input('No. of rotation per second, f (rps)', value = 0.01)
     shaft_diameter = st.sidebar.number_input('Shaft diameter, D (mm)', value = 0.01)
-    Vickers_hardness = st.sidebar.number_input('Vickers hardness, HV (kgf/mm^2)', value = 0.01)
+    vickers_hardness = st.sidebar.number_input('Vickers hardness, HV (kgf/mm^2)', value = 0.01)
     cf_load = st.sidebar.number_input('Load correction factor, C load ', value = 0.01)
     cf_size = st.sidebar.number_input('Size correction factor, C size ', value = 0.01)
     cf_surf = st.sidebar.number_input('Surface finishing correction factor, C surf ', value = 0.01)
     cf_temp = st.sidebar.number_input('Temperature correction factor, C temp ', value = 0.01)
     cf_reliab = st.sidebar.number_input('Reliable correction factor, C reliab ', value = 0.01)
     cf_notch = st.sidebar.number_input('Notch correction factor, C notch ', value = 0.01)
-    Stress_conc = st.sidebar.number_input('Stress-Concentration Factor, Kf ', value = 0.01)
+    stress_conc = st.sidebar.number_input('Stress-Concentration Factor, Kf ', value = 0.01)
     
     notchroot_radius = st.sidebar.number_input('Notch root radius, r (mm)', value = 0.01)
     characteristic_length = st.sidebar.number_input('Characteristic length, p (mm)', value = 0.01)
@@ -37,14 +37,14 @@ def user_input_features():
     data = {'P (Watt)': motor_power,
             'f (rps)': rotation,
             'D (mm)': shaft_diameter,
-            'HV (kgf/mm^2)': Vickers_hardness,
+            'HV (kgf/mm^2)': vickers_hardness,
             'C load' : cf_load,
             'C size' :  cf_size,
             'C surf' : cf_surf,
             'C temp' : cf_temp,
             'C reliab' : cf_reliab,
             'C notch' :cf_notch,
-            'Kt' : Stress_conc,
+            'Kt' : stress_conc,
             'r (mm)': notchroot_radius,  
             'p (mm)': characteristic_length,
             #'Sy (MPa)': Sy,
