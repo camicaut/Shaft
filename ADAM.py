@@ -77,11 +77,11 @@ st.write('t is the pipe thickness; D is the pipe diameter; L is the pipe length 
 # Calculate Torsional loading
 T = p/(2*(m.pi)*f)
 
-# Calculate burst pressure of intact pipe P Tresca
+# Calculate shear stress due to torque
 τ = (16*T)/((m.pi)*pow(d,3))
 
 # Calculate burst pressure of corroded pipe P ASME B31G (2013)
-M = m.sqrt(1+0.8*(L/(m.sqrt(D*t)))) #Folias factor
+Se_p = m.sqrt(1+0.8*(L/(m.sqrt(D*t)))) #Folias factor
 
 if L < m.sqrt(20*D*t):
     P_ASME_B31G = (2*t*UTS/D)*(1-(2/3)*(Dc/t)/1-(2/3)*(Dc/t)/M)
