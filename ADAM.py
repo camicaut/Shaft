@@ -75,10 +75,10 @@ st.subheader('Nomenclature')
 st.write('t is the pipe thickness; D is the pipe diameter; L is the pipe length (i.e., by default = 1000 mm); Lc is the corrosion length; Dc is the corrosion depth; Sy is the pipe material yield stress; UTS is the pipe material Ultimate Tensile Strength.')
 
 # Calculate Torsional loading
-T = p/(2*m.pi*f)
+T = p/(2*(m.pi)*f)
 
 # Calculate burst pressure of intact pipe P Tresca
-τ = (16*T)/(m.pi*d^3)
+τ = (16*T)/((m.pi)*d^3)
 
 # Calculate burst pressure of corroded pipe P ASME B31G (2013)
 M = m.sqrt(1+0.8*(L/(m.sqrt(D*t)))) #Folias factor
