@@ -66,7 +66,7 @@ csu=df['C surf'].values.item()
 ct=df['C temp'].values.item()
 cr=df['C reliab'].values.item()
 cn=df['C notch'].values.item()
-Kt=df['Kt'].values.item()
+kt=df['Kt'].values.item()
 r=df['r (mm)'].values.item()
 p=df['p (mm)'].values.item()
 
