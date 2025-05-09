@@ -37,6 +37,7 @@ def user_input_features():
             #'Sy (MPa)': Sy,
             #'Pop_Max (MPa)': Maximum_Operating_Pressure,
             #'Pop_Min (MPa)': Minimum_Operating_Pressure}
+           }
     features = pd.DataFrame(data, index=[0])
     return features
 
