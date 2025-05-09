@@ -96,15 +96,19 @@ P_DnV = (2*UTS*t/D-t)*((1-(Dc/t))/(1-(Dc/(t*Q))))
 # Calculate burst pressure of corroded pipe P PCORRC Model 
 P_PCORRC = (2*t*UTS/D)*(1-Dc/t)
 
-user_input={'t (mm)': "{:.2f}".format(t),
+user_input={'P (Watt)': "{:.2f}".format(P),
+            'f (rps)': "{:.2f}".format(f),
             'D (mm)': "{:.2f}".format(D),
-            'L (mm)': "{:.2f}".format(L),
-            'Lc (mm)': "{:.2f}".format(Lc),
-            'Dc (mm)': "{:.2f}".format(Dc),
-            'UTS (MPa)': "{:.2f}".format(UTS),
-            'Sy (MPa)': "{:.2f}".format(Sy),
-            'Pop_Max (MPa)': "{:.2f}".format(Pop_Max),
-            'Pop_Min (MPa)': "{:.2f}".format(Pop_Min)}
+            'HV (kgf/mm^2)': "{:.2f}".format(HV),
+            'C load': "{:.2f}".format(cl),
+            'C size': "{:.2f}".format(csi),
+            'C surf': "{:.2f}".format(csu),
+            'C temp': "{:.2f}".format(ct),
+            'C reliab': "{:.2f}".format(cr),
+            'C notch': "{:.2f}".format(cn),
+            'Kt': "{:.2f}".format(Kt),
+            'r (mm)': "{:.2f}".format(r),
+            'p (mm)' : "{:.2f}".format(p)}
 user_input_df=pd.DataFrame(user_input, index=[0])
 st.subheader('User Input Parameters')
 st.write(user_input_df)
